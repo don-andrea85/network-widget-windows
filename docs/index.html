@@ -1,0 +1,218 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Network Widget for Windows</title>
+  <meta name="description" content="A tiny Windows desktop widget for switching Wi-Fi and Ethernet adapters in one click.">
+  <meta property="og:title" content="Network Widget for Windows">
+  <meta property="og:description" content="Switch Wi-Fi and Ethernet from a compact Windows desktop widget.">
+  <meta property="og:image" content="assets/hero.png">
+  <style>
+    :root {
+      color-scheme: light;
+      --blue: #0067c0;
+      --green: #1ea45c;
+      --red: #d2322d;
+      --ink: #141b28;
+      --muted: #58677a;
+      --paper: #f1f5fa;
+      --card: #ffffff;
+      --line: #d9e1ec;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      margin: 0;
+      background: var(--paper);
+      color: var(--ink);
+      font-family: "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+      line-height: 1.5;
+    }
+
+    main {
+      width: min(1120px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 0.95fr) minmax(360px, 1fr);
+      gap: 56px;
+      align-items: center;
+      min-height: 92vh;
+      padding: 72px 0 44px;
+    }
+
+    .eyebrow {
+      margin: 0 0 14px;
+      color: var(--blue);
+      font-size: 0.88rem;
+      font-weight: 700;
+      letter-spacing: 0;
+      text-transform: uppercase;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(3rem, 7vw, 5.8rem);
+      line-height: 0.95;
+      letter-spacing: 0;
+    }
+
+    .lead {
+      max-width: 580px;
+      margin: 28px 0 0;
+      color: var(--muted);
+      font-size: clamp(1.15rem, 2vw, 1.55rem);
+    }
+
+    .actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 34px;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 48px;
+      padding: 0 22px;
+      border: 1px solid var(--line);
+      border-radius: 6px;
+      background: var(--card);
+      color: var(--ink);
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    .button.primary {
+      border-color: var(--blue);
+      background: var(--blue);
+      color: white;
+    }
+
+    .visual {
+      position: relative;
+    }
+
+    .visual img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 16px;
+      padding: 8px 0 72px;
+    }
+
+    .feature {
+      min-height: 150px;
+      padding: 22px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      background: var(--card);
+    }
+
+    .feature strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 1.05rem;
+    }
+
+    .feature p {
+      margin: 0;
+      color: var(--muted);
+    }
+
+    .screens {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+      padding-bottom: 80px;
+    }
+
+    .screens img {
+      width: 100%;
+      border-radius: 8px;
+      border: 1px solid var(--line);
+    }
+
+    footer {
+      border-top: 1px solid var(--line);
+      padding: 28px 0 36px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero {
+        grid-template-columns: 1fr;
+        gap: 32px;
+        min-height: auto;
+        padding-top: 44px;
+      }
+
+      .features,
+      .screens {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div>
+        <p class="eyebrow">Open source Windows utility</p>
+        <h1>Network Widget</h1>
+        <p class="lead">Switch Wi-Fi and Ethernet from a compact desktop widget, without digging through Windows Settings.</p>
+        <div class="actions">
+          <a class="button primary" href="https://github.com/don-andrea85/network-widget-windows/releases/latest/download/Installa.Network.Widget.exe">Download for Windows</a>
+          <a class="button" href="https://github.com/don-andrea85/network-widget-windows">View on GitHub</a>
+        </div>
+      </div>
+      <div class="visual">
+        <img src="assets/hero.png" alt="Network Widget preview">
+      </div>
+    </section>
+
+    <section class="features" aria-label="Features">
+      <div class="feature">
+        <strong>One-click switching</strong>
+        <p>Enable or disable Wi-Fi and Ethernet adapters directly from the desktop.</p>
+      </div>
+      <div class="feature">
+        <strong>Built for daily use</strong>
+        <p>Move it, resize it, minimize it to the notification area, and start it with Windows.</p>
+      </div>
+      <div class="feature">
+        <strong>Clear adapter states</strong>
+        <p>Green means active. Red means disabled. No hunting through network menus.</p>
+      </div>
+    </section>
+
+    <section class="screens" aria-label="Screenshots">
+      <img src="assets/widget-active.png" alt="Network Widget active state">
+      <img src="assets/widget-disabled.png" alt="Network Widget disabled state">
+    </section>
+
+    <footer>
+      MIT licensed. Windows requires elevation to change network adapter state; the app can register optional scheduled tasks to reduce repeated UAC prompts.
+    </footer>
+  </main>
+</body>
+</html>
