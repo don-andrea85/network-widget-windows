@@ -1,16 +1,24 @@
 # Network Widget for Windows
 
-A small Windows desktop widget for quickly enabling or disabling Wi-Fi and Ethernet adapters.
+![Network Widget hero](assets/hero.png)
 
-The widget is designed to stay out of the way: it can float on the desktop, resize from the corner, minimize to the notification area, and start automatically with Windows.
+A tiny Windows desktop widget for quickly enabling or disabling Wi-Fi and Ethernet adapters.
+
+[Download the latest installer](https://github.com/don-andrea85/network-widget-windows/releases/latest/download/Installa.Network.Widget.exe)
 
 ## Why This Exists
 
-This utility was born from a simple real-world problem: on some setups, Wi-Fi can be faster or more convenient than Ethernet for specific tasks, while Ethernet may still be useful for stability or other workflows.
+Network Widget was built for a simple real-world problem: sometimes Wi-Fi is faster or more convenient than Ethernet, while Ethernet is still useful for stability or specific workflows.
 
-Network Widget makes switching between Wi-Fi and Ethernet quick. Instead of opening Windows Settings, going into Network & Internet, finding the adapter, and enabling or disabling it manually, you can do it from a compact desktop widget or from the tray.
+Instead of opening Windows Settings, going into Network & Internet, finding the adapter, and enabling or disabling it manually, this widget keeps the switch one click away.
 
 One example use case: keep Ethernet disabled when Wi-Fi gives better download performance, then switch adapters quickly when another connection mode is needed.
+
+## Screenshots
+
+![Network Widget active state](assets/widget-active.png)
+
+![Network Widget disabled state](assets/widget-disabled.png)
 
 ## Features
 
@@ -31,21 +39,13 @@ One example use case: keep Ethernet disabled when Wi-Fi gives better download pe
 
 ## Install
 
-Build the installer from source:
-
-```powershell
-powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
-```
-
-Then run:
+Download and run the latest installer:
 
 ```text
-dist/Installa Network Widget.exe
+Installa.Network.Widget.exe
 ```
 
 For the smoothest experience, run the installer as administrator once. This lets it register the elevated scheduled tasks used for adapter changes.
-
-A prebuilt installer can be attached later as a GitHub Release asset.
 
 ## Usage
 
