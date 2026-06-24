@@ -17,7 +17,7 @@ One example use case: keep Ethernet disabled when Wi-Fi gives better download pe
 - Toggle Wi-Fi and Ethernet adapters from a compact desktop widget
 - Green active state and red disabled state
 - Resizable, borderless Windows-style UI
-- Notification area icon with `Open` and `Exit`
+- Notification area icon with `Apri` and `Esci`
 - Optional elevated scheduled tasks to avoid repeated UAC prompts
 - Starts automatically with Windows
 - DPI-aware rendering for high-resolution displays
@@ -31,13 +31,21 @@ One example use case: keep Ethernet disabled when Wi-Fi gives better download pe
 
 ## Install
 
-Download and run:
+Build the installer from source:
+
+```powershell
+powershell -ExecutionPolicy Bypass -File .\scripts\build.ps1
+```
+
+Then run:
 
 ```text
 dist/Installa Network Widget.exe
 ```
 
 For the smoothest experience, run the installer as administrator once. This lets it register the elevated scheduled tasks used for adapter changes.
+
+A prebuilt installer can be attached later as a GitHub Release asset.
 
 ## Usage
 
